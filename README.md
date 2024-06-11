@@ -11,6 +11,7 @@ Welcome to the Get Next Line (GNL) project repository! This project is part of t
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Acknowledgments](#acknowledgments)
+- [Grade](#grade)
 
 ## Introduction
 
@@ -101,6 +102,10 @@ Contributions are welcome! If you have any suggestions or improvements, feel fre
 - The C programming community for their excellent documentation and support.
 - All contributors who have helped improve this project.
 
+##Grade
+- Norminette: Ok!
+- Grade: 125/100
+  
 ---
 
 Happy coding!
