@@ -61,6 +61,7 @@ Here's a brief overview of the project structure:
     ```
 
 2. **Compile the Project**:
+   
    Mandatory
     ```bash
     cc -Wall -Wextra -Werror -g get_next_line.c get_next_line_utils.c
