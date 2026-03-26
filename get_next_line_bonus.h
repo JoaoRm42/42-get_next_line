@@ -26,10 +26,17 @@
 # include <stdio.h>
 # include <fcntl.h>
 
+/*
+** get_next_line (bonus):
+** Igual ao obrigatório, mas com estado separado por cada fd.
+** Permite alternar leitura entre vários descritores sem perder contexto.
+** Cada retorno é alocado dinamicamente e deve ser libertado com free().
+*/
 char	*get_next_line(int fd);
 
-/* Utility functions */
-
+/*
+** Funções auxiliares usadas internamente pelo módulo adicional.
+*/
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);

@@ -22,10 +22,17 @@
 # include <stdio.h>
 # include <fcntl.h>
 
+/*
+** get_next_line:
+** Lê e devolve a próxima linha de fd, incluindo '\n' quando existe.
+** Cada chamada devolve uma nova string alocada; quem chama deve fazer free().
+** Em EOF sem dados pendentes, ou em erro, devolve NULL.
+*/
 char	*get_next_line(int fd);
 
-///////////FUNCTIONS///////////
-
+/*
+** Funções auxiliares usadas internamente pelo módulo.
+*/
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);

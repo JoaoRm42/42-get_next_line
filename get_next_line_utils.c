@@ -3,41 +3,57 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joaoped2 <joaoped2@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:52:18 by joaoped2          #+#    #+#             */
-/*   Updated: 2022/11/17 14:52:21 by joaoped2         ###   ########.fr       */
+/*   Updated: 2026/03/24 19:52:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+/*
+** ft_strlen:
+** Mede o tamanho da string até '\0'.
+** Aceita NULL e devolve 0 para simplificar chamadas defensivas.
+*/
 size_t	ft_strlen(const char *s)
 {
-	char	*p;
+	size_t	i;
 
-	p = (char *)s;
-	while (*p)
-		++p;
-	return (p - s);
+	if (!s)
+		return (0);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
+/*
+** ft_strchr:
+** Procura a primeira ocorrência de c em s.
+** Devolve: ponteiro para o caráter encontrado, ou NULL se não existir.
+*/
 char	*ft_strchr(const char *s, int c)
 {
-	char	*ptr;
-
-	ptr = (char *)s;
-	while (*ptr)
+	if (!s)
+		return (NULL);
+	while (*s)
 	{
-		if (*ptr == (unsigned char)c)
-			return (ptr);
-		ptr++;
+		if (*s == (unsigned char)c)
+			return ((char *)s);
+		s++;
 	}
 	if (c == 0)
-		return (ptr);
+		return ((char *)s);
 	return (NULL);
 }
 
+/*
+** ft_strdup:
+** Duplica string para memória dinâmica.
+** Devolve: ponteiro para copia (free por quem chama) ou NULL em erro.
+*/
 char	*ft_strdup(const char *s)
 {
 	char	*new;
@@ -53,6 +69,12 @@ char	*ft_strdup(const char *s)
 	return (new);
 }
 
+/*
+** ft_strjoin:
+** Concatena s1 + s2 numa nova string alocada.
+** Trata entradas NULL de forma segura.
+** Devolve: nova string (free por quem chama) ou NULL em erro.
+*/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new;
@@ -76,6 +98,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (new);
 }
 
+/*
+** ft_substr:
+** Cria substring a partir de s, em start, com máximo len bytes.
+** Se start estiver fora de s, devolve string vazia.
+** Devolve: nova substring (free por quem chama) ou NULL em erro.
+*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subst;
